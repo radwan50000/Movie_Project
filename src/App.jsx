@@ -58,7 +58,7 @@ function App(){
         <>
         <div className='flex flex-col w-full bg-[url("./assets/BG.png")] max-sm:px-[10%] px-[30%] bg-no-repeat bg-size-[100%]'>
         <header className='relative mt-30'>
-            <img src={heroImg} alt="Hero Image for header" className='max-sm:w-[80%] absolute w-xl top-0 left-[50%] translate-y-[-25%] translate-x-[-50%] z-[0]'/>
+            <img src={heroImg} alt="Hero Image for header" className='max-sm:w-[80%] absolute w-2xl top-0 left-[50%] translate-y-[-25%] translate-x-[-50%] z-[0]'/>
             <h1 className='max-sm:mt-40 mt-70 max-sm:text-[28px] '>
                 Find <span className='text-gradient'>Movies</span> You'll Enjoy Wihtout the Hassle
               </h1>
