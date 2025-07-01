@@ -22,7 +22,7 @@ function App(){
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: `Bearer ${api_key}`
+                Authorization: `Bearer bdbc56c567bfa469e4013aa18fc94406}`
             }
         };
 
