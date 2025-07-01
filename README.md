@@ -13,6 +13,5 @@
 <li style='display: flex;align-items: center;gap: 4px;'>Tailwind Css <img src='./public/TailwindCSS.png' style='width: 20px;'> </li>
 </ul>
 
-
-
- 
+<h2>It's Get the Popular Movies in The Year with date realesed , rating name , Movie Language and it's cover and alot of other data: </h2>
+<img src='./public/2.png' alt='Movies Popular Image' style='width: 100%;'/>
