@@ -13,8 +13,42 @@ function App(){
     let [movieList,setMovieList] = useState([]);
     let [isLoading,setIsLoading] = useState(false);
 
+
+
+    const SearchMovies = async () => {
+        const search_url = `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`
+
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`
+            }
+        }
+
+        try{
+            setIsLoading(true);
+            const response = await fetch(search_url, options);
+
+            if(!response.ok) throw new Error('Error');
+
+            const data = await response.json();
+
+            if(data.Response === 'False') throw new Error('Error');
+
+            if(data.results.length > 0){
+                setMovieList(data.results);
+            }else setError(`Sorry No Movie With That Name ${search}`)
+
+        }catch{
+            setError('Oops Their is an Error !');
+        }finally{
+            setIsLoading(false);
+        }
+    }
+
     const GetMovies = async () => {
-        const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
+        const discover_url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
         const api_token = import.meta.env.VITE_API_TOKEN;
 
         const options = {
@@ -28,7 +62,7 @@ function App(){
         try{
             setIsLoading(true);
             setError('');
-            const response = await fetch(url, options)
+            const response = await fetch(discover_url, options)
 
             if(!response.ok) throw new Error('Error');
 
@@ -39,8 +73,11 @@ function App(){
                 setMovieList([]);
             }
 
-            setMovieList(data.results);
-            console.log(data.results)
+            console.log(data.results);
+
+            if(data.results.length === 0){
+                setError('Sorry an Error Happens :(');
+            }else setMovieList(data.results);
 
         }catch{
             setError('Oops Their is an Error !');
@@ -53,6 +90,15 @@ function App(){
     useEffect(() => {
         GetMovies();
     }, []);
+
+    useEffect(() => {
+        if(search.length > 0){
+            SearchMovies();
+        }else{
+            GetMovies();
+        }
+    },[search]);
+
 
     return(
         <>
@@ -75,7 +121,11 @@ function App(){
                     isLoading ? (
                         <Spinner/>
                     ):error ? (
-                        <p className='text-red-800'>Oops an Error Happens</p>
+                        <p className='text-red-800 text-4xl my-20'>{error}</p>
+                    ):search.length > 0 ? (
+                        movieList.map((movie) => (
+                            <MovieCard key={movie.id} movie={movie}/>
+                        ))
                     ):(
                         movieList.map((movie) => (
                             <MovieCard key={movie.id} movie={movie}/>
