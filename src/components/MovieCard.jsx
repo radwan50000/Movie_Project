@@ -1,4 +1,4 @@
-import Star from "../../public/star.svg";
+import Star from "../assets/star.svg";
 import NoPoster from '../assets/No-Poster.png';
 
 function MovieCard({movie}) {

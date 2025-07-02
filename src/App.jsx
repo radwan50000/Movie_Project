@@ -3,7 +3,7 @@ import heroImg from './assets/hero-img.png'
 import './App.css'
 import Search from './components/Search'
 import Spinner from './components/Spinner'
-import Star from '../public/star.svg'
+import Star from './assets/star.svg'
 import MovieCard from "./components/MovieCard.jsx";
 
 
@@ -16,13 +16,13 @@ function App(){
     const GetMovies = async () => {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
         const api_key = import.meta.env.VITE_API_KEY;
+        const api_token = import.meta.env.VITE_API_TOKEN;
 
-        console.log(api_key);
         const options = {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                Authorization: `Bearer bdbc56c567bfa469e4013aa18fc94406}`
+                Authorization: `Bearer ${api_token}`
             }
         };
 
