@@ -15,7 +15,6 @@ function App(){
 
     const GetMovies = async () => {
         const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
-        const api_key = import.meta.env.VITE_API_KEY;
         const api_token = import.meta.env.VITE_API_TOKEN;
 
         const options = {

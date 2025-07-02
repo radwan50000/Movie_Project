@@ -18,8 +18,9 @@ function MovieCard({movie}) {
                     src={movie.poster_path ? `${img_url}${movie.poster_path}` : NoPoster}
                     alt={`${movie.original_title} poster`} />
             </div>
-            <p className='text-white font-bold text-xl w-full'>
-                {movie.title}
+            <p className='text-white font-bold text-xl
+                    w-[270px]' data-name={movie.title}>
+                {movie.title != null && movie.title ? movie.title.length > 23 ? movie.title.substring(0, 23) + '...' : movie.title:'Unknown movie'}
             </p>
 
             <div className='flex flex-row gap-1 '>
