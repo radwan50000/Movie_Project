@@ -7,7 +7,7 @@ function MovieCard({movie}) {
     return (
         <div
             className='flex flex-col w-fit
-                 h-fit p-8 gap-4 items-start
+                 h-fit p-6 gap-4 items-start
                   bg-dark-100 rounded-md bg-center
                   justify-start'>
 
