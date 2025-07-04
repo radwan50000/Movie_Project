@@ -6,7 +6,7 @@ function MovieDetailsHeader ({movieData}) {
     return (
          // Main Container Page
         <header className='flex flex-row justify-between'>
-            <div className='flex flex-col justify-start gap-8'>
+            <div className='flex flex-col justify-start gap-8 w-8/12'>
                 {/*Header Title*/}
                 <p className='w-fit text-white flex text-5xl font-semibold font-sans'>
                     {movieData.title}

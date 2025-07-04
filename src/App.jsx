@@ -20,7 +20,7 @@ function App(){
     },500,[search]);
 
     const SearchMovies = async () => {
-        const search_url = `https://api.themoviedb.org/3/search/movie?query=${debounceSearch}&include_adult=false&language=en-US&page=1`
+        const search_url = `https://api.themoviedb.org/3/search/movie?query=${debounceSearch}&include_adult=false&language=en-US&page=1&sort_by=popularity.desc`
 
         const options = {
             method: 'GET',
