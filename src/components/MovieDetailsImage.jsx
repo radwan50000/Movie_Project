@@ -31,8 +31,15 @@ function MovieDetailsImage({movieData}){
 
             if(! data.results.length > 0) throw new Error('Error Found')
 
-            console.log(data.results[0].key);
-            setMovieUrl(data.results[0].key);
+
+            console.log(data.results)
+            data.results.map(movie =>{
+                if(movie.site === 'YouTube' && movie.type === 'Trailer'){
+                    setMovieUrl(movie.key);
+                    return
+                }
+            })
+
         }catch(error){
             console.log(error.message);
         }
@@ -77,8 +84,6 @@ function MovieDetailsImage({movieData}){
 
                     </div>
                 </div>
-
-
 
             </div>
         </>

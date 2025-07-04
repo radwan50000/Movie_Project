@@ -77,8 +77,6 @@ function App(){
                 setMovieList([]);
             }
 
-            console.log(data.results);
-
             if(data.results.length === 0){
                 setError('Sorry an Error Happens :(');
             }else setMovieList(data.results);
