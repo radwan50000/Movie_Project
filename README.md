@@ -16,7 +16,7 @@
 <h2>It's Get the Popular Movies in The Year with date realesed , rating name , Movie Language and it's cover and alot of other data: </h2>
 <img src='./public/2.png' alt='Movies Popular Image' style='width: 100%;'/>
 
-<h2>Showing Movie Details with Greate Way 🔥 </h2>
-<img src='./public/3.png' alt='Movies Popular Image' style='width: 100%;'/>
+<h2>Showing Movie Details with Great Way 🔥</h2>
+<img src='./public/3.png' alt='Movies Details Image' style='width: 100%;'/>
 
 <ul><li>website: <a href='https://movies-p.netlify.app'/>MovieDB</a> </li> </ul>
