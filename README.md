@@ -1,6 +1,6 @@
 <img src='./public/1.png' alt='Header Website Image' style='width: 100%;'/>
 
-<h1 sytle='font-weight: black;font-size:60px;'>Movie Website </h1>
+<h1 sytle='font-weight: black;font-size:60px;'>Movie Website 🎬</h1>
 	
 ## -Movie Website is using the [TMDB](https://www.themoviedb.org/?language=en-US) API to get the newest movies with it's full data.
 
@@ -15,5 +15,8 @@
 
 <h2>It's Get the Popular Movies in The Year with date realesed , rating name , Movie Language and it's cover and alot of other data: </h2>
 <img src='./public/2.png' alt='Movies Popular Image' style='width: 100%;'/>
+
+<h2>Showing Movie Details with Greate Way 🔥 </h2>
+<img src='./public/3.png' alt='Movies Popular Image' style='width: 100%;'/>
 
 <ul><li>website: <a href='https://movies-p.netlify.app'/>MovieDB</a> </li> </ul>

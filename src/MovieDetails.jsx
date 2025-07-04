@@ -8,8 +8,6 @@ function MovieDetails() {
     let [movieData , setMovieData] = useState({});
     let [isLoading , setIsLoading] = useState(false);
 
-
-
     const getMovieData = async (movieId) => {
         try{
             setIsLoading(true);
