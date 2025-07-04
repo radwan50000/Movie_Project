@@ -10,6 +10,7 @@
   --color-primary: #030014;
 
   --color-light-100: #cecefb;
+  --color-light-purple: #D6C7FF;
   --color-light-200: #a8b5db;
 
   --color-gray-100: #9ca4ab;
@@ -34,6 +35,24 @@
     @apply flex items-center gap-2
     h-fit bg-[#2c284d] px-4
     py-2 rounded-md;
+  }
+  .left-details-card{
+    @apply flex w-2/12 h-fit;
+  }
+  .left-details-card p{
+    @apply text-purple-text text-2xl
+    font-sans font-medium;
+  }
+  .right-details-card{
+    @apply flex w-4/6 h-fit gap-x-4 text-start flex-wrap gap-y-4;
+  }
+
+  .right-details-card p{
+    @apply text-xl text-light-purple font-sans font-bold;
+  }
+  .details-card-container{
+    @apply flex justify-start
+    my-8 h-fit gap-x-8 gap-y-4;
   }
 }
 

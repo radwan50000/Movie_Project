@@ -19,18 +19,15 @@ function MovieDetailsHeader ({movieData}) {
                     <span className='text-purple-text'>
                                         •
                                     </span>
-                    <span className='text-purple-text'>
-                                        {(movieData.runtime / 60).toFixed(0)}h {(movieData.runtime % 60)}m
+                    <span className='text-purple-text flex flex-row gap-2'>
+                                    PG-2
                                     </span>
                     <span className='text-purple-text'>
                                         •
                                     </span>
-                    <span className='text-purple-text flex flex-row gap-2'>
-                                        {movieData.genres.map((obj,ind) => (
-                                            <div key={ind} className='header-card font-bold'> <p className='text-purple-text'>
-                                                {obj.name}
-                                            </p></div>
-                                        ))}
+
+                    <span className='text-purple-text'>
+                                        {(movieData.runtime / 60).toFixed(0)}h {(movieData.runtime % 60)}m
                                     </span>
 
                 </div>
@@ -45,7 +42,7 @@ function MovieDetailsHeader ({movieData}) {
                                         /10
                                     </span>
                     <span  className='text-purple-text'>
-                                        ({movieData.vote_count}k)
+                                        ({movieData.vote_count})
                                     </span>
                 </div>
                 <div className='header-card'>

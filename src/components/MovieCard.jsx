@@ -10,7 +10,7 @@ function MovieCard({movie}) {
             className='flex flex-col w-fit
                  h-fit p-6 gap-4 items-start cursor-pointer
                   bg-dark-100 rounded-md bg-center transition-[.4s]
-                  hover:bg-dark-70 justify-start'
+                   justify-start'
             data-id={movie.id}
             onClick={() => {
                 sessionStorage.setItem('movie', movie.id);
