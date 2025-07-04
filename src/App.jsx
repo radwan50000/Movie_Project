@@ -1,9 +1,9 @@
-import { useState,useEffect } from 'react'
-import heroImg from './assets/hero-img.png'
-import './App.css'
-import Search from './components/Search'
-import Spinner from './components/Spinner'
-import Star from './assets/star.svg'
+import { useState,useEffect } from 'react';
+import {useDebounce} from 'react-use';
+import heroImg from './assets/hero-img.png';
+import './App.css';
+import Search from './components/Search';
+import Spinner from './components/Spinner';
 import MovieCard from "./components/MovieCard.jsx";
 
 
@@ -12,11 +12,14 @@ function App(){
     let [error, setError] = useState('');
     let [movieList,setMovieList] = useState([]);
     let [isLoading,setIsLoading] = useState(false);
+    let [debounceSearch,setDebounceSearch] = useState('');
 
-
+    useDebounce(() => {
+        setDebounceSearch(search);
+    },500,[search]);
 
     const SearchMovies = async () => {
-        const search_url = `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`
+        const search_url = `https://api.themoviedb.org/3/search/movie?query=${debounceSearch}&include_adult=false&language=en-US&page=1`
 
         const options = {
             method: 'GET',
@@ -38,7 +41,7 @@ function App(){
 
             if(data.results.length > 0){
                 setMovieList(data.results);
-            }else setError(`Sorry No Movie With That Name ${search}`)
+            }else setError(`Sorry No Movie With That Name ${debounceSearch}`)
 
         }catch{
             setError('Oops Their is an Error !');
@@ -92,12 +95,12 @@ function App(){
     }, []);
 
     useEffect(() => {
-        if(search.length > 0){
+        if(debounceSearch.length > 0){
             SearchMovies();
         }else{
             GetMovies();
         }
-    },[search]);
+    },[debounceSearch]);
 
 
     return(
@@ -122,7 +125,7 @@ function App(){
                         <Spinner/>
                     ):error ? (
                         <p className='text-red-800 text-4xl my-20'>{error}</p>
-                    ):search.length > 0 ? (
+                    ):debounceSearch.length > 0 ? (
                         movieList.map((movie) => (
                             <MovieCard key={movie.id} movie={movie}/>
                         ))
@@ -136,7 +139,6 @@ function App(){
             </div>
         </section>
         </>
-
   )
 }
 

@@ -4,6 +4,9 @@
 @import "tailwindcss";
 
 @theme {
+  --color-white-blur: rgba(255, 255, 255, 0.3);
+  --color-purple-text: #A8B5DB;
+
   --color-primary: #030014;
 
   --color-light-100: #cecefb;
@@ -12,12 +15,26 @@
   --color-gray-100: #9ca4ab;
 
   --color-dark-100: #0f0d23;
+  --color-dark-70: #151434;
 
   --font-dm-sans: DM Sans, sans-serif;
 
   --breakpoint-xs: 480px;
 
   --background-image-hero-pattern: url("/hero-bg.png");
+}
+
+
+.shadow{
+  box-shadow: 0px 0px 50px rgba(253, 231, 253, 0.42);
+}
+
+@layer components {
+  .header-card{
+    @apply flex items-center gap-2
+    h-fit bg-[#2c284d] px-4
+    py-2 rounded-md;
+  }
 }
 
 @layer base {

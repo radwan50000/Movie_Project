@@ -3,13 +3,21 @@ import NoPoster from '../assets/No-Poster.png';
 
 function MovieCard({movie}) {
     const img_url = 'https://image.tmdb.org/t/p/w500';
+    console.log(window.location.href);
 
     return (
         <div
             className='flex flex-col w-fit
-                 h-fit p-6 gap-4 items-start
-                  bg-dark-100 rounded-md bg-center
-                  justify-start'>
+                 h-fit p-6 gap-4 items-start cursor-pointer
+                  bg-dark-100 rounded-md bg-center transition-[.4s]
+                  hover:bg-dark-70 justify-start'
+            data-id={movie.id}
+            onClick={() => {
+                sessionStorage.setItem('movie', movie.id);
+
+                window.location.href+= 'movie-details';
+            }}
+        >
 
             <div className='w-[300px] rounded-md
                                     overflow-hidden'>
